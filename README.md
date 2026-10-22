@@ -8,7 +8,7 @@ Taller final de Minería de Datos: segmentación del *Mall Customers Dataset* co
 - `requirements.txt` – dependencias.
 
 ## Aplicación
-Desplegada en Streamlit Community Cloud: https://segmentacion-clientes-kmeans.streamlit.app
+Desplegada en Streamlit Community Cloud: https://segmentacion-clientes-juanmaya8.streamlit.app
 
 ## Ejecución local
 1. `pip install -r requirements.txt`
