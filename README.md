@@ -1,34 +1,45 @@
 # Segmentación de clientes con K-Means
 
+**Taller Final – Inteligencia de Negocios y Minería de Datos**  
+Universidad Cooperativa de Colombia  
+**Integrantes:** Jack Anderson Limas Solarte · Juan David Maya Benavides  
+**Profesor:** Cristian Camilo Ordoñez Quintero  
+**Fecha:** 22/10/2026
+
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JuanMaya8/segmentacion_clientes/blob/main/Taller_KMeans_Mall_Customers.ipynb)
 [![Abrir la app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://segmentacion-clientes-juanmaya8.streamlit.app)
 
-Taller final de Minería de Datos: segmentación del *Mall Customers Dataset* con K-Means, método del codo, coeficiente de silueta, interpretación de negocio y despliegue con Streamlit.
+## Descripción
+En este proyecto segmentamos a los clientes del *Mall Customers Dataset* (Kaggle) con el algoritmo K-Means. Usamos el ingreso anual y el Spending Score, elegimos el número de clusters con el método del codo y el coeficiente de silueta, interpretamos cada grupo desde el punto de vista del negocio y desplegamos una aplicación en Streamlit para clasificar clientes nuevos.
 
-## Archivos
-- `Taller_KMeans_Mall_Customers.ipynb` – cuaderno con las Partes 1 a 7, sus resultados y las respuestas.
-- `app.py` – aplicación de Streamlit (método del codo, clusters y clasificación de un nuevo cliente).
-- `requirements.txt` – dependencias.
+## Cómo revisar el trabajo
+1. **Cuaderno:** con el botón **Open in Colab** se abre `Taller_KMeans_Mall_Customers.ipynb` ya ejecutado, con todas las gráficas, tablas y respuestas. También se puede ver directamente en GitHub. Si se quiere volver a ejecutar: *Entorno de ejecución → Ejecutar todas* (el dataset se descarga solo con `kagglehub`).
+2. **Aplicación:** https://segmentacion-clientes-juanmaya8.streamlit.app  
+   Si lleva unos días sin visitas, la app entra en reposo; al abrirla aparece un botón para activarla y tarda menos de un minuto.
+
+## Contenido del cuaderno
+| Parte | Contenido |
+|---|---|
+| 1. Exploración de datos | Carga del dataset, variables relevantes, estadística descriptiva, atípicos y relaciones entre variables. |
+| 2. Preprocesamiento | Normalización con `StandardScaler`. |
+| 3. Método del codo | Inercia para K = 1 a 10. |
+| 4. Coeficiente de silueta | Silueta para K = 2 a 10 y gráfico de silueta por observación. |
+| 5. Modelo K-Means | Entrenamiento con K = 5, asignación de clusters y centroides. |
+| 6. Interpretación de negocio | Perfiles de clientes y estrategias de marketing. |
+| 7. Despliegue con Streamlit | Enlace a la aplicación y explicación de lo que contiene. |
 
 ## Resultados principales
-- Variables usadas: ingreso anual y Spending Score, escaladas con `StandardScaler`.
-- El método del codo y el coeficiente de silueta (0,555) coinciden en **K = 5**.
-- Perfiles: clientes de alto valor, promedio, con potencial, de bajo valor y de alto gasto con bajo ingreso.
+- El método del codo y el coeficiente de silueta (0.555) coinciden en **K = 5**.
+- Perfiles obtenidos: clientes de alto valor, promedio, con potencial, de bajo valor y de alto gasto con bajo ingreso.
+- El segmento con mayor oportunidad de crecimiento es el de **ingreso alto y gasto bajo**.
 
-## Aplicación en Streamlit
-Desplegada en Streamlit Community Cloud: https://segmentacion-clientes-juanmaya8.streamlit.app
+## Archivos
+- `Taller_KMeans_Mall_Customers.ipynb` – cuaderno con las Partes 1 a 7, resultados y respuestas.
+- `app.py` – aplicación de Streamlit (método del codo, clusters y clasificación de un nuevo cliente).
+- `requirements.txt` – dependencias de la aplicación.
 
-Si lleva varios días sin visitas, la app entra en reposo; al abrirla aparece un botón para despertarla y tarda menos de un minuto.
-
-## Abrir y editar el cuaderno en Google Colab
-1. Pulsa el botón **Abrir en Colab** de arriba, o entra a:
-   https://colab.research.google.com/github/JuanMaya8/segmentacion_clientes/blob/main/Taller_KMeans_Mall_Customers.ipynb
-   (cualquier cuaderno de GitHub se abre en Colab cambiando `github.com` por `colab.research.google.com/github` en su dirección).
-2. Para ejecutarlo: **Entorno de ejecución → Ejecutar todas**. El dataset se descarga solo con `kagglehub`.
-3. Para guardar los cambios en este repositorio: **Archivo → Guardar una copia en GitHub**, con el repositorio `JuanMaya8/segmentacion_clientes`, la rama `main` y la ruta `Taller_KMeans_Mall_Customers.ipynb`.
-
-> **Importante:** abre siempre el cuaderno desde GitHub justo antes de editarlo. Si guardas desde una pestaña de Colab abierta antes de un cambio hecho en el repositorio, ese cambio se sobrescribe. Si acabas de hacer un commit, espera unos minutos antes de abrirlo para que Colab no cargue una copia anterior.
-
-## Ejecución local de la app
-1. `pip install -r requirements.txt`
-2. `streamlit run app.py` (la app descarga el dataset con `kagglehub` y entrena el modelo al iniciar)
+## Ejecutar la aplicación localmente
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
