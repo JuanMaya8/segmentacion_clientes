@@ -7,7 +7,9 @@ Taller final de Minería de Datos: segmentación del *Mall Customers Dataset* co
 - `app.py` – aplicación de Streamlit (codo, clusters y clasificación de un nuevo cliente).
 - `requirements.txt` – dependencias.
 
-## Uso
-1. Ejecutar el cuaderno (descarga el dataset con `kagglehub` y genera `modelo_kmeans.pkl` y `Mall_Customers_clusters.csv`).
-2. `pip install -r requirements.txt`
-3. `streamlit run app.py`
+## Aplicación
+Desplegada en Streamlit Community Cloud: https://segmentacion-clientes-kmeans.streamlit.app
+
+## Ejecución local
+1. `pip install -r requirements.txt`
+2. `streamlit run app.py` (la app descarga el dataset con `kagglehub` y entrena el modelo al iniciar)
